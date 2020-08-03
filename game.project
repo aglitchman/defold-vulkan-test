@@ -1,0 +1,49 @@
+[project]
+title = vulkan_test
+dependencies = 
+
+[bootstrap]
+main_collection = /demo/main.collectionc
+
+[input]
+game_binding = /input/game.input_bindingc
+use_accelerometer = 0
+
+[display]
+width = 1280
+height = 720
+high_dpi = 1
+
+[script]
+shared_state = 1
+
+[windows]
+app_icon = /assets/app_icons/appicon.ico
+
+[osx]
+app_icon = /assets/app_icons/appicon.icns
+
+[android]
+input_method = HiddenInputField
+
+[physics]
+gravity_y = -1000.0
+scale = 0.01
+
+[shader]
+output_spirv = 1
+
+[native_extension]
+app_manifest = /opengl.appmanifest
+
+[mesh]
+max_count = 1000
+
+[html5]
+scale_mode = fit
+engine_arguments = --vertify-graphics-calls=false
+cssfile = /builtins/manifests/web/dark_theme.css
+
+[collection]
+max_instances = 3000
+

@@ -1,0 +1,4 @@
+material: "/demo/mesh/sprite_mesh.material"
+vertices: "/demo/mesh/quad_50.buffer"
+textures: "/assets/images/logo.png"
+primitive_type: PRIMITIVE_TRIANGLES

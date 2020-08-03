@@ -1,0 +1,12 @@
+function init(self)
+end
+
+function update(self, dt)
+	gui.set_text(gui.get_node("render_time"), "Render time: " .. string.format("%.2f", vulkan_ext.render_time()) .. " ms")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("mesh_count") then
+		gui.set_text(gui.get_node("mesh_count"), "Mesh count: " .. message.count)
+	end
+end
