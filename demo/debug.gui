@@ -29,7 +29,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 300.0
     y: 25.0
     z: 0.0
     w: 1.0
@@ -42,7 +42,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Render time: "
+  text: "Render time: <0>"
   font: "debug"
   id: "render_time"
   xanchor: XANCHOR_NONE
@@ -91,7 +91,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 300.0
     y: 25.0
     z: 0.0
     w: 1.0
@@ -104,9 +104,71 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Mesh count:"
+  text: "Mesh count: <0>"
   font: "debug"
   id: "mesh_count"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_W
+  outline {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  adjust_mode: ADJUST_MODE_FIT
+  line_break: false
+  layer: "text"
+  inherit_alpha: true
+  alpha: 1.0
+  outline_alpha: 1.0
+  shadow_alpha: 0.0
+  template_node_child: false
+  text_leading: 1.0
+  text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 2.0
+    y: 654.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 1000.0
+    y: 25.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_TEXT
+  blend_mode: BLEND_MODE_ALPHA
+  text: "Engine version: <text>"
+  font: "debug"
+  id: "engine_version"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_W

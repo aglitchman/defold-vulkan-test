@@ -1,4 +1,7 @@
 function init(self)
+	local engine_info = sys.get_engine_info()
+	local version_str = "Engine version: " .. engine_info.version .. " (" .. engine_info.version_sha1:sub(1, 7) .. ")"
+	gui.set_text(gui.get_node("engine_version"), version_str)
 end
 
 function update(self, dt)
