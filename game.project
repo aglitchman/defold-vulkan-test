@@ -34,10 +34,10 @@ scale = 0.01
 output_spirv = 1
 
 [native_extension]
-app_manifest = /vulkan.appmanifest
+app_manifest = /opengl.appmanifest
 
 [mesh]
-max_count = 250
+max_count = 1000
 
 [html5]
 scale_mode = fit
