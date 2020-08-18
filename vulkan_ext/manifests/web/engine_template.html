@@ -1,0 +1,84 @@
+<html>
+  <body>
+    <script type="text/javascript">
+      //   HTMLCanvasElement.prototype.getContext = (function (oldGetContextFn) {
+      //     return function (type, attrs) {
+      //       attrs = attrs || {};
+      //       if (type === "webgl") {
+      //         console.log(attrs);
+      //         attrs.preserveDrawingBuffer = false;
+      //       }
+      //       return oldGetContextFn.call(this, type, attrs);
+      //     };
+      //   })(HTMLCanvasElement.prototype.getContext);
+    </script>
+    <script
+      src="https://browser.sentry-cdn.com/5.20.1/bundle.min.js"
+      integrity="sha384-O8HdAJg1h8RARFowXd2J/r5fIWuinSBtjhwQoPesfVILeXzGpJxvyY/77OaPPXUo"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      Sentry.init({
+        dsn:
+          "https://a09cb15ea1224b7db88ff3681c0d574f@o43904.ingest.sentry.io/5395416",
+      });
+    </script>
+    <script type="text/javascript">
+      if (!(navigator.getGamepads || navigator.webkitGetGamepads)) {
+        navigator.getGamepads = function () {
+          return [];
+        };
+      }
+      if (!(window.AudioContext || window.webkitAudioContext)) {
+        window.AudioContext = function () {
+          this.sampleRate = 44100;
+          this.destination = 0;
+          this.currentTime = 0;
+          this.state = "running";
+        };
+        window.AudioContext.prototype.createBuffer = function () {
+          return {
+            getChannelData: function () {
+              return [];
+            },
+          };
+        };
+        window.AudioContext.prototype.createBufferSource = function () {
+          return {
+            connect: function () {},
+            start: function () {},
+          };
+        };
+      }
+      // IE11 + Edge ≤18, Chrome <41, Firefox <40
+      var audioContext = window.AudioContext || window.webkitAudioContext;
+      if (!audioContext.prototype.resume) {
+        audioContext.prototype.resume = function () {};
+      }
+      // Firefox <=37
+      // Older browsers may lack TypedArray.slice()
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/slice#Browser_compatibility
+      // https://github.com/emscripten-core/emscripten/commit/d62293d3bdd6eda351b6c19db1f182cec522b7c6
+      [
+        Int8Array,
+        Uint8Array,
+        Int16Array,
+        Uint16Array,
+        Int32Array,
+        Uint32Array,
+        Float32Array,
+        Float64Array,
+      ].forEach(function (typedArray) {
+        if (!typedArray.prototype.slice) {
+          Object.defineProperty(typedArray.prototype, "slice", {
+            value: function (begin, end) {
+              return new typedArray(
+                Array.prototype.slice.call(this, begin, end)
+              );
+            },
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
