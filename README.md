@@ -10,7 +10,7 @@ Press *F2* to toggle profiler.
 
 ### OpenGL
 
-Set the default .appmanifest:
+Set this .appmanifest for OpenGL:
 
 ![OpenGL](opengl.png)
 
@@ -19,7 +19,3 @@ Set the default .appmanifest:
 Set this .appmanifest for Vulkan:
 
 ![Vulkan](vulkan_1.png)
-
-And uncomment this line in file `vulkan_ext/src/ext.cpp` to enable Vulkan adapter:
-
-![Vulkan](vulkan_2.png)

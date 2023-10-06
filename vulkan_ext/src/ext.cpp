@@ -50,9 +50,6 @@ extern "C" {
 
 static dmExtension::Result AppInitializeVulkanExt(dmExtension::AppParams* params)
 {
-    // Uncomment this to enable Vulkan
-    // GraphicsAdapterVulkan();
-
     dmExtension::RegisterCallback(dmExtension::CALLBACK_PRE_RENDER, OnPreRender);
     dmExtension::RegisterCallback(dmExtension::CALLBACK_POST_RENDER, OnPostRender);
     return dmExtension::RESULT_OK;
